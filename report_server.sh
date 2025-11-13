@@ -9,13 +9,13 @@ uptime
 echo "Currently connected :"
 
 w
- echo "_______________________________"
+ echo "   "
 
 echo "last logins :"
 
 last -a   | head -3
 
-echo  "_______________________________"
+echo  "  "
 
 echo "Disk and memory usage : "
 
@@ -23,7 +23,7 @@ df -h | xargs | awk 'NR==2 {print "Free/total disk : " $11 " / " $9}'
 
 free -m  | xargs |awk 'NR==2 {print "Free/total memory : " $17 " / " $8 " MB "}'
 
-echo "_______________________________"
+echo " "
 
 start_log=$(head -1 /var/log/messages | cut -c 1-12)
 
@@ -34,7 +34,7 @@ echo -n "OOM errors since $start_log :  $oom "
 
 echo ""
 
-echo "_______________________________"
+echo "   "
 
 echo  "utilisation and most expensive processes :"
 
@@ -43,13 +43,13 @@ echo
 
 top -b | head -10 | tail -4
 
-echo "_____________________________________"
+echo "  "
 
 echo "opened tcp ports :"
 
 nmap -T4 127.0.0.1
 
-echo "___________________________________________"
+echo " "
 
 echo "current connections :"
 
@@ -59,7 +59,7 @@ echo "processes :"
 
 ps auxf --width=200
 
-echo "______________________________________________"
+echo " "
 
 echo "vmstat :"
 
